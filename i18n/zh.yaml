@@ -1,0 +1,17 @@
+- id: profile.fullname
+  translation: "s-o"
+- id: nav.tattoo
+  translation: "纹身"
+- id: nav.design
+  translation: "设计"
+- id: nav.henna
+  translation: "海娜"
+- id: nav.piercing
+  translation: "穿孔"
+- id: nav.dreadlocks
+  translation: "脏辫"
+
+- id: profile.description
+  translation: ""
+- id: nav.contact
+  translation: "联系我"

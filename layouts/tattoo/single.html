@@ -1,0 +1,91 @@
+ {{ partial "header.html" . }}
+
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+							{{ partial "profile.html" . }}
+					  </div>
+						<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+							 <main role="main">
+								 <h1 class="tattoo-title" itemprop="headline">{{ .Title }}</h1>
+                 <div class="extra-links">
+                 {{ with .Params.design }}
+                  <a href="{{ $.Site.BaseURL }}design/{{ . }}"><h2 class="design-link">Design of this tattoo is available here.</h2></a>
+                 {{ end }}
+                 {{ with .Params.previous }}
+                  <div class="previous-link">
+                    <a href="{{ $.Site.BaseURL }}tattoo/{{ . }}"><< Previous</a>
+                  </div>
+                 {{ end }}
+                 {{ range where .Site.Pages "Type" "=" "tattoo" }}
+                  {{- if eq .Params.previous $.File.BaseFileName }}
+                  <div class="next-link">
+                   <a href="{{ $.Site.BaseURL }}tattoo/{{ .File.BaseFileName }}">Next >></a>
+                 </div>
+                  {{ end -}}
+                 {{ end -}}
+                 </div>
+								 <section itemprop="entry-text">
+									 {{ .Content }}
+                   {{ partial "controls.html" . }}
+                 <div id="tattoo-wrapper">
+                    <div class="one-column" id="list">
+											{{ range .Params.images }}
+												{{ if not (eq $.Params.image .) }}
+		              				<div class="pin">
+														<figure>
+															<img class="tattoo-image"
+																src="{{ $.Site.BaseURL }}images/tattoo/{{ . }}.jpg"
+																alt="{{ $.Title }}">
+														</figure>
+													</div>
+												 {{ end }}
+											{{ end }}
+											{{ range .Params.images_ipfs }}
+  	              				<div class="pin">
+  													<figure>
+  														<img class="tattoo-image"
+  															src="https://gateway.ipfs.io/ipfs/{{ . }}"
+  															alt="{{ $.Title }}">
+  													</figure>
+  												</div>
+											{{ end }}
+                      {{ range .Params.videos_ipfs }}
+  	              				<div class="pin">
+  													<figure>
+                              <video width="260" class="tattoo-video" loop>
+                                <source src="https://gateway.ipfs.io/ipfs/{{ . }}" type="video/mp4">
+                              Your browser does not support the video tag.
+                              </video>
+  													</figure>
+  												</div>
+											{{ end }}
+			              	<div class="pin">
+												<figure>
+                          {{ if .Params.image_ipfs }}
+                            <img src="https://gateway.ipfs.io/ipfs/{{ .Params.image_ipfs }}" alt="{{ .Title }}" class="tattoo-image">
+                          {{ else }}
+                            <img src="{{ $.Site.BaseURL }}images/tattoo/{{ .Params.image }}.jpg" alt="{{ .Title }}" class="tattoo-image">
+                          {{ end }}
+												</figure>
+											</div>
+			              </div>
+                  </div>
+                  {{ partial "studio_info.html" . }}
+                  {{ partial "artwork_dates.html" . }}
+                  {{ partial "blockchain.html" . }}
+                  {{ partial "bodyparts.html" . }}
+                  <div id="artwork-tags">
+                    {{ partial "artwork_tags.html" . }}
+                  </div>
+								</main>
+							</div>
+						</div>
+					</div>
+
+
+
+	{{ partial "js.html" . }}
+
+
+	{{ partial "footer.html" . }}
