@@ -1,11 +1,7 @@
 - id: profile.fullname
   translation: "URSTPD (s-o)"
 - id: profile.description
-  translation: "s-o uses tattoos as the material for her art, with bodies and ink as her medium. s-o primarily works in two categories:
-* The first: minimalistic graphical works on the skin, devoid of figurativity, a combination of cold geometry upon a dynamic living body, a game of the architect.
-* The second - ironic images, small drawings often associated with Internet and pop culture. s-o employs the stick’n’poke or handpoke technique of tattooing, as an informed choice, a sort of manifesto of simplicity and human imperfection creativity. In every work lies a secret symbolism, the proclamation of the rule of chaos and nonsense existing simultaneously.
-s-o is a conceptual artist. In addition to her exhibition activity, from adolescence s-o was interested in the social meaning of body-modification and its impact on the counter-culture. She first took up a tattoo machine in 2009 in Kiev, Ukraine. Then, in 2012, s-o focused exclusively in suprematist geometry in St. Petersburg, Russia.  Since 2016 s-o has completely switched to the stick’n’poke technique of giving tattoos. She will gladly tell why, how and where.
-s-o works in Russia, Ukraine and China, and has had tours in Belarus, Nepal, Vietnam."
+  translation: "N/A"
 
 - id: contact.headline
   translation: "Follow my public groups"
@@ -13,7 +9,7 @@ s-o works in Russia, Ukraine and China, and has had tours in Belarus, Nepal, Vie
   translation: ""
 
 - id: contact.email
-  translation: "iamalex.ooah@gmail.com"
+  translation: "N/A"
 - id: contact.chat
   translation: ""
 - id: contact.steemit
